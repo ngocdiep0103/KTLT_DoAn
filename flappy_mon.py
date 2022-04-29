@@ -36,11 +36,13 @@ while True:  # tạo loop
                 mon_rect.center = (100, 320)
                 mon_movement = 0
                 score = 0
+                idx=0
         if event.type == spawnpipe:
-            pipe_list.extend(create_pipe())
-            if pipe_list[score].centerx <= mon_rect.left and game_active:
-                score += 1
-                score_sound.play()
+            pipe = create_pipe()
+            pipe_list.extend(pipe)
+
+
+
 
     if game_active:
         WIN.blit(background, (0, 0))  # thêm background
@@ -71,3 +73,4 @@ while True:  # tạo loop
 
     pygame.display.update()
     clock.tick(FPS)  # để kiểm soát tốc độ của chương trình
+
