@@ -38,27 +38,6 @@ game_over_rect = game_over_surface.get_rect(center=(180, 320))
 spawnpipe = pygame.USEREVENT
 pygame.time.set_timer(spawnpipe, 1200)  # sau 1.2s tạo ra ống mới
 
- while True:  # tạo loop
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                pygame.quit()
-                sys.exit()
-            if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_SPACE and game_active: #Tạo hiệu ứng bay
-                    # jump
-                    doramon.set_mon_movement(-5)
-                    sound.flap_sound.play()
-                if event.key == pygame.K_SPACE and game_active == False: #tạo di chuyển của ống
-                    game_active = True
-                    pipe_manager.clear_pipe_list()
-                    doramon.mon_rect.center = (100, 320)
-                    doramon.set_mon_movement(0)
-                    score.reset_score()
-                    pipe_manager.idx = 0
-            if event.type == spawnpipe: #tạo hệ thống ống
-                pipe_pos = pipe.create_pipe()
-                pipe_manager.add_pipe(pipe_pos)
-
         if game_active:
             WIN.blit(bg, (0, 0))  # thêm background
             doramon.move()
