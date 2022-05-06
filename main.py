@@ -14,7 +14,6 @@ WIN = pygame.display.set_mode((360, 640))
 
 # set up background
 bg = pygame.image.load('image/background.png').convert()
-bg = pygame.transform.scale2x(bg)
 
 # đặt tên cửa sổ
 pygame.display.set_caption("FLAPPY MON")
