@@ -33,6 +33,12 @@ game_font = pygame.font.Font('Audiowide-Regular (1).ttf', 40)
 game_active = True
 # điểm
 score = Score(WIN=WIN, game_font=game_font)
+doramon = Mon()
+floor = Floor(WIN=WIN)
+sound = Sound()
+pipe = Pipe(PIPE_SURFACE=PIPE_SURFACE, PIPE_HEIGHT=PIPE_HEIGHT)
+pipe_manager = PipeManager(WIN=WIN, sound=sound, score=score, idx=idx, game_active=game_active, PIPE_HEIGHT=PIPE_HEIGHT, PIPE_SURFACE=PIPE_SURFACE)
+
 # tạo màn hình kết thúc
 game_over_surface = pygame.image.load('image/opening .png').convert_alpha()
 game_over_rect = game_over_surface.get_rect(center=(180, 320))
